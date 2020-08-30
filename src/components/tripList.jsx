@@ -9,7 +9,6 @@ import { ArrowRight } from 'react-bootstrap-icons';
 
 class TripList extends React.Component {
 
-
     movementReport = () => {
         alert('Movement Report is in Pending ?')
     }
@@ -102,7 +101,6 @@ class TripList extends React.Component {
             ],
         }
         return (
-
             <React.Fragment>
                 <div
                     className="ag-theme-balham"
@@ -114,12 +112,9 @@ class TripList extends React.Component {
                     <AgGridReact
                         columnDefs={list.columnDefs}
                         rowData={this.props.tripList}
-
                     >
-
                     </AgGridReact>
                 </div>
-
             </React.Fragment>
         )
     }
