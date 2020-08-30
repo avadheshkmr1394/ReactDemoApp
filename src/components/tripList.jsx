@@ -83,18 +83,20 @@ class TripList extends React.Component {
                     headerName: "ODOMeter Reading", field: "startODOMeter",
                     width: 137,
                     cellRendererFramework: function (params) {
-                        debugger
                         let oDOMeter1 = params.data.startODOMeter == '' ? 'NA' : params.data.startODOMeter
                         let oDOMeter2 = params.data.endODOMeter == '' ? 'NA' : params.data.endODOMeter
+                        let url = 'http://staging.watsoo.com:8080'
+                        let startODOMeterImage = params.data.startODOMeterUrl === null ? '' : <img style={{ height: '25px' }} src={url + params.data.startODOMeterUrl} />
+                        let endODOMeterImage = params.data.endODOMeterUrl === null ? '' : <img style={{ height: '25px' }} src={url + params.data.endODOMeterUrl} />
 
-                        return <span> {oDOMeter1} <span style={{ color: "blue" }}><ArrowRight /></span>  {oDOMeter2}  </span>
+                        return <span> {startODOMeterImage} {oDOMeter1} <span style={{ color: "blue" }}><ArrowRight /></span> {endODOMeterImage}  {oDOMeter2}  </span>
                     }
                 },
                 {
                     headerName: 'Action', field: '',
                     width: 310,
                     cellRendererFramework: function name(params) {
-                        return <div style={{paddingTop:'6px'}}><button type="button" onClick={() => _this.movementReport()} style={{height:'31px',paddingTop:'1px'}} className="btn btn-success">Movement Report</button> <button type="button" style={{height:'31px',paddingTop:'1px'}} onClick={() => _this.stopageReport()} className="btn btn-success">Stopage Report</button></div>
+                        return <div style={{ paddingTop: '6px' }}><button type="button" onClick={() => _this.movementReport()} style={{ height: '31px', paddingTop: '1px' }} className="btn btn-success">Movement Report</button> <button type="button" style={{ height: '31px', paddingTop: '1px' }} onClick={() => _this.stopageReport()} className="btn btn-success">Stopage Report</button></div>
                     }
                 }
             ],
