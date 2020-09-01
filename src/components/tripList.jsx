@@ -31,7 +31,6 @@ class TripList extends React.Component {
                     }
                 },
                 {
-
                     headerName: "Trip Start (Node) To Trip End(Node)", field: "startTripDate",
                     width: 275,
                     cellRendererFramework: function (params) {
